@@ -1,0 +1,65 @@
+[
+  {
+    "id": 101,
+    "title": "Essential Runner 'Bone'",
+    "price": 189000,
+    "description": "미니멀 톤의 경량 러너. 데일리 착화에 최적화.",
+    "sizes": [
+      "230",
+      "240",
+      "250",
+      "260",
+      "270",
+      "280",
+      "290"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1520256862855-398228c41684?q=80&w=1200&auto=format&fit=crop"
+    ]
+  },
+  {
+    "id": 102,
+    "title": "Foam Slide 'Stone'",
+    "price": 69000,
+    "description": "쿠셔닝이 좋은 폼 슬라이드. 실내외 모두 OK.",
+    "sizes": [
+      "230",
+      "240",
+      "250",
+      "260",
+      "270",
+      "280",
+      "290"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1597045566677-8cf9f2a0162b?q=80&w=1200&auto=format&fit=crop"
+    ]
+  },
+  {
+    "id": 103,
+    "title": "Oversize Hoodie 'Sand'",
+    "price": 99000,
+    "description": "헤비웨이트 원단의 오버사이즈 후디.",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1592878849125-1686e6b08d19?q=80&w=1200&auto=format&fit=crop"
+    ]
+  },
+  {
+    "id": 104,
+    "title": "Minimal Cap 'Black'",
+    "price": 39000,
+    "description": "로우 프로파일, 무자수 미니멀 캡.",
+    "sizes": [
+      "OS"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1543087903-1ac2ec7aa8c5?q=80&w=1200&auto=format&fit=crop"
+    ]
+  }
+]
