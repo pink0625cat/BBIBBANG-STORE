@@ -1,0 +1,65 @@
+
+<!doctype html><html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Owner – STORE</title>
+<link rel="stylesheet" href="./assets/styles.css">
+<script defer src="./assets/owner.js"></script>
+</head><body>
+<header class="header"><div class="header-inner container">
+  <a class="brand" href="./index.html">STORE</a>
+</div></header>
+<main class="container">
+  <h2>관리자 (로컬 전용)</h2>
+  <div class="padded" style="margin-bottom:16px">
+    <strong>상품 관리</strong>
+    <div style="margin-top:10px">
+      <button class="btn" onclick="add()">상품 추가</button>
+      <label class="btn" style="display:inline-block">
+        Import JSON<input type="file" accept="application/json" onchange="importJSON(event)" style="display:none">
+      </label>
+      <a id="download" class="btn" style="display:none">Export JSON</a>
+      <span id="hint" style="color:#bdbdbd;margin-left:10px"></span>
+    </div>
+    <table style="margin-top:12px"><thead><tr><th>ID</th><th>제목</th><th>가격</th><th>사이즈</th><th>결제링크</th><th></th></tr></thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+
+  <div class="padded">
+    <strong>상품 편집</strong>
+    <form onsubmit="saveForm(event)">
+      <input type="hidden" id="eid">
+      <div class="field"><label>제목<input id="title" class="input" required></label></div>
+      <div class="field"><label>가격(원)<input id="price" class="input" type="number" min="0" required></label></div>
+      <div class="field"><label>설명<textarea id="desc" class="input" rows="4"></textarea></label></div>
+      <div class="field"><label>사이즈(쉼표로 구분)<input id="sizes" class="input" placeholder="230,240,250 ... 또는 S,M,L"></label></div>
+      <div class="field"><label>이미지 URL들(쉼표로 구분)<input id="images" class="input" placeholder="https://...jpg, https://...png"></label></div>
+      <div class="field"><label>Stripe 결제 링크(선택)<input id="plink" class="input" placeholder="https://buy.stripe.com/..."></label></div>
+      <button class="btn" type="submit">저장</button>
+      <a class="btn" onclick="exportJSON()">Export JSON</a>
+    </form>
+  </div>
+
+  <div class="padded" style="margin-top:16px">
+    <strong>EmailJS 설정 (주문 이메일)</strong>
+    <form onsubmit="saveEmailCfg(event)">
+      <div class="field"><label>Service ID<input id="service_id" class="input"></label></div>
+      <div class="field"><label>Template ID<input id="template_id" class="input"></label></div>
+      <div class="field"><label>Public Key<input id="public_key" class="input"></label></div>
+      <div class="field"><label>수신 이메일(to_email)<input id="to_email" class="input" placeholder="you@example.com"></label></div>
+      <button class="btn" type="submit">저장</button>
+      <p class="badge" style="margin-top:8px">EmailJS는 클라이언트에서 이메일 전송을 도와주는 서비스입니다. (Keys 필요)</p>
+    </form>
+  </div>
+
+  <div class="padded" style="margin-top:16px;color:#bdbdbd">
+    <strong>배포 절차</strong>
+    <ol>
+      <li>여기서 Export한 <code>products.json</code>을 내려받습니다.</li>
+      <li>저장소의 <code>data/products.json</code>을 교체 업로드합니다.</li>
+      <li>이미지는 GitHub에 업로드하여 원본 URL을 사용하거나, 외부 이미지 호스팅 URL을 사용하세요.</li>
+    </ol>
+  </div>
+</main>
+<footer class="footer">로컬 관리페이지: 실제 운영용은 CMS/DB 연동 권장</footer>
+</body></html>
